@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/script.js" defer></script>
+
+    <title>Breno Silva, Jogo Individual</title>
+  </head>
+  <body>
+    <div class="game-board">
+      <img src="./assets/Small Cloud 1.png" class="cloud0" />
+      <img src="./assets/Small Cloud 3.png" class="cloud" />
+      <img id="character" src="./assets/Run 01.png" class="crabbo" />
+      <img src="./assets/Spikes.png" class="spike" />
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const character = document.getElementById("character"); // Now it will be found
+        const images = [
+          "./assets/Run 01.png",
+          "./assets/Run 02.png",
+          "./assets/Run 03.png",
+          "./assets/Run 04.png",
+          "./assets/Run 05.png",
+        ];
+
+        let index = 0;
+
+        function animateCharacter() {
+          character.src = images[index];
+          index = (index + 1) % images.length;
+        }
+
+        setInterval(animateCharacter, 100); // Change frame every 100ms
+      });
+    </script>
+  </body>
+</html>
